@@ -93,3 +93,11 @@ my $server = Tatsumaki::Server->new(port => $config->{port});
    $server->register_service($app);
 
 AE::cv->recv;
+
+__END__
+add the config below into your .emacs:
+
+  (add-hook 'find-file-hooks 'autosave-server/add)
+  (defun autosave-server/add ()
+    (start-process-shell-command "autosave-server" "*autosave-server*"
+     (format "curl 'http://localhost:9999/add?file=%s'" (buffer-file-name))))
