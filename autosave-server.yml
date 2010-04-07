@@ -1,0 +1,3 @@
+port: 9999
+interval: 1
+emacsclient: /Applications/Emacs.app/Contents/MacOS/bin/emacsclient
